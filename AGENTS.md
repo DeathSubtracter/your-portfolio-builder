@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep editable portfolio copy in `src/data/portfolio.ts` so personal content is never scattered across route components.
+- Reuse the shared Minecraft-style primitives and `PageFrame` for visual consistency across all portfolio routes.
