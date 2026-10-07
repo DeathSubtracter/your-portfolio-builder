@@ -210,9 +210,11 @@ button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 3px s
 .inventory-slot small { color: oklch(0.72 0.16 145); }
 @media (max-width: 640px) {
   .title-screen { padding-top: 12vh; }
-  .splash { right: 0; bottom: 24%; }
+  .splash { position: static; display: block; margin-top: .75rem; transform: rotate(-5deg); white-space: normal; }
+  .wordmark-wrap > p { max-width: 19rem; margin-inline: auto; line-height: 1.5; }
   .main-menu { margin-top: 12vh; }
   .social-dock { bottom: .6rem; right: .6rem; }
+  .game-shell-dark .social-dock { right: auto; left: .6rem; }
   .page-frame { padding: .6rem; }
   .menu-viewport { margin-bottom: .4rem; }
   .world-list, .server-list { margin: .35rem auto; padding: .2rem; }
@@ -220,7 +222,7 @@ button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 3px s
   .world-icon, .server-icon { width: 3rem; }
   .world-status, .ping { display: none; }
   .tag-row { display: none!important; }
-  .action-bar { gap: .3rem; }
+  .action-bar { gap: .3rem; padding-bottom: 3.4rem; }
   .action-bar .mc-button { min-height: 2.8rem; padding-inline: .45rem; font-size: .75rem; }
   .inventory-panel { grid-template-columns: 1fr; margin: .5rem auto; }
   .avatar-block { grid-template-columns: auto 1fr; padding: .5rem; }

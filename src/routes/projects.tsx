@@ -15,7 +15,7 @@ export const Route = createFileRoute("/projects")({
 function ProjectsPage() {
   const [selected, setSelected] = useState(0);
   const project = projects[selected];
-  return <PageFrame title="Select Project" actions={<><MinecraftButton disabled={!project}>Open Project</MinecraftButton><MinecraftButton disabled={!project?.github}>GitHub</MinecraftButton><MinecraftButton to="/">Back</MinecraftButton></>}>
+  return <PageFrame title="Select Project" actions={<><MinecraftButton disabled={!project?.demo}>Open Project</MinecraftButton><MinecraftButton disabled={!project?.github}>GitHub</MinecraftButton><MinecraftButton to="/">Back</MinecraftButton></>}>
     <div className="world-list" role="listbox" aria-label="Projects">
       {projects.map((item, index) => <button key={item.id} type="button" role="option" aria-selected={selected === index} onClick={() => setSelected(index)} className="world-row">
         <span className="world-icon">{item.icon}</span>
