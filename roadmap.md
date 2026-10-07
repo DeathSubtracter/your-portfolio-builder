@@ -1,7 +1,7 @@
 # Roadmap
 
-- [ ] Match reference desktop scale and Minecraft bitmap typography
-- [ ] Rebuild dimensional title lettering and authentic menu controls
+- [x] Match reference desktop scale and Minecraft bitmap typography
+- [x] Rebuild dimensional title lettering and authentic menu controls
 - [ ] Match Skills, About, world/server list framing and density
 - [ ] Verify existing interactions and mobile layout after fidelity pass
 
