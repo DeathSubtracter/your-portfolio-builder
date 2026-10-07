@@ -13,3 +13,4 @@
 - Reuse the shared Minecraft-style primitives and `PageFrame` for visual consistency across all portfolio routes.
 - Use shared source-rendered pixel item icons and named data-driven item variants so every screen has one cohesive icon vocabulary.
 - Keep unavailable external actions disabled and use the shared Resume control so missing content never opens a native dialog.
+- Render the portfolio title from original pixel-letter geometry with token-based extrusion and bevels so the title remains sharp at every interface scale.
