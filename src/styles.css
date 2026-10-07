@@ -229,3 +229,8 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible { outline: 2px sol
  .world-list,.server-list { padding: 4px; margin-top: 6px; }.mc-button.world-row,.mc-button.server-row { grid-template-columns: 48px minmax(0,1fr); padding: 7px 4px; gap: 8px; min-height: 115px; }.world-icon,.server-icon { width: 48px; height: 48px; }.world-icon .pixel-item,.server-icon .pixel-item { width: 36px; height: 36px; }.world-copy strong,.server-copy strong { font-size: 16px; }.world-copy > span,.server-copy > span { font-size: 12px; }.world-copy .tag-row { font-size: 11px; }.world-status,.ping { display: none; }.mc-tooltip { max-width: 200px; }
 }
 @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation: none !important; transition: none !important; } }
+.portfolio-title { width: min(100%,620px); margin: 0 auto; }
+.portfolio-title svg { display: block; width: 100%; height: auto; overflow: visible; }
+.title-outline { fill: var(--background); }
+.title-extrusion { fill: var(--logo-shadow); }
+.title-face { fill: var(--logo); }
