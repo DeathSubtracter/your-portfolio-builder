@@ -3,6 +3,7 @@ import { MinecraftButton } from "@/components/MinecraftButton";
 import { GameBackdrop, SocialDock } from "@/components/PageFrame";
 import { profile, splashPhrases } from "@/data/portfolio";
 import { ResumeButton } from "@/components/ResumeButton";
+import { PortfolioTitle } from "@/components/PortfolioTitle";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -22,10 +23,7 @@ function Index() {
     <GameBackdrop>
       <div className="title-screen">
         <header className="wordmark-wrap">
-          <div className="wordmark" aria-label="Ky Hoang Portfolio">
-            <span>KY HOANG</span>
-            <strong>PORTFOLIO</strong>
-          </div>
+          <PortfolioTitle />
           <span className="splash">{splash}</span>
           <p>{profile.subtitle} · {profile.direction}</p>
         </header>
