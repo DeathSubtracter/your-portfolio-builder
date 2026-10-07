@@ -1,9 +1,8 @@
 # Roadmap
 
-- [x] Build polished Minecraft-inspired homepage and global visual system
-- [x] Build saved-world Projects page
-- [x] Build multiplayer-server Experience page
-- [x] Build Book & Quill About page
-- [x] Build inventory Skills page
-- [x] Add placeholder Resume, GitHub, and LinkedIn access
-- [x] Verify responsive layout, navigation, focus states, and direct route loading
+- [x] Correct homepage, panorama, pixel typography, and shared buttons
+- [x] Replace Skills with reference-led enchanting layout
+- [x] Replace About with compact profile and Right now layout
+- [x] Refine Projects world-selection composition and icons
+- [x] Remove Resume alert and retain applicable actions
+- [x] Verify consistency, navigation, and mobile layouts

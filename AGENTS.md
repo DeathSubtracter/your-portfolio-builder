@@ -11,3 +11,5 @@
 
 - Keep editable portfolio copy in `src/data/portfolio.ts` so personal content is never scattered across route components.
 - Reuse the shared Minecraft-style primitives and `PageFrame` for visual consistency across all portfolio routes.
+- Use shared source-rendered pixel item icons and named data-driven item variants so every screen has one cohesive icon vocabulary.
+- Keep unavailable external actions disabled and use the shared Resume control so missing content never opens a native dialog.

@@ -29,11 +29,25 @@ export const experience = [
 ];
 
 export const skillGroups = [
-  { name: "Languages", items: [{ name: "Python", icon: "🐍" }, { name: "Java", icon: "☕" }, { name: "Swift", icon: "🐦" }, { name: "SQL", icon: "▤" }] },
-  { name: "Web & Apps", items: [{ name: "React", icon: "⚛" }, { name: "TypeScript", icon: "TS" }, { name: "HTML/CSS", icon: "<>" }, { name: "Node.js", icon: "⬡" }] },
-  { name: "Tools", items: [{ name: "Git", icon: "⑂" }, { name: "VS Code", icon: "◇" }, { name: "Jupyter", icon: "◉" }, { name: "Figma", icon: "F" }] },
-  { name: "Foundations", items: [{ name: "Data Structures", icon: "▦" }, { name: "Algorithms", icon: "⚙" }, { name: "Statistics", icon: "Σ" }, { name: "Machine Learning", icon: "✦" }] },
-];
+  { name: "Languages", icon: "sword", runes: "⍑ᒷリ ᓭ⚍リ", items: ["Python", "Java", "Swift", "SQL", "TypeScript", "JavaScript"] },
+  { name: "Frameworks & Libraries", icon: "pickaxe", runes: "ᒲᔑ⊣╎ᓵ ᓭℸᔑᓵꖌ", items: ["React", "SwiftUI", "Node.js", "Pandas"] },
+  { name: "AI / Data", icon: "shovel", runes: "ᓭℸᔑℸ╎ᓭℸ╎ᓵᓭ", items: ["Machine Learning", "Statistics", "Jupyter", "Data Visualization"] },
+  { name: "Tools & Infrastructure", icon: "axe", runes: "ℸ𝙹𝙹ꖎᓭ ᔑリ↸ ᒲ𝙹∷ᒷ", items: ["Git", "VS Code", "SQLite", "Figma"] },
+] as const;
+
+export const about = {
+  paragraph: "Hey, I’m Ky! I’m a Data Science student at UC Berkeley working toward a career in software engineering. I enjoy turning messy problems into useful software and exploring the stories hidden in data. From building an interface to debugging a tricky algorithm, I like understanding how all the pieces fit together. I’m looking for opportunities to learn, build, and contribute to products people enjoy using.",
+  metadata: [{ label: "Studying", value: "Data Science" }, { label: "At", value: "UC Berkeley" }, { label: "Goal", value: "Software Engineering" }],
+  tags: ["Software", "Data", "AI"],
+  current: [
+    { label: "Learning", value: "Swift / SwiftUI", icon: "book", detail: "Exploring native app development and thoughtful interfaces." },
+    { label: "Building", value: "Personal software projects", icon: "pickaxe", detail: "Turning ideas into small, practical applications." },
+    { label: "Practicing", value: "Data structures & algorithms", icon: "sword", detail: "Strengthening problem-solving and computer science foundations." },
+    { label: "Exploring", value: "AI / software engineering", icon: "crystal", detail: "Learning where data and useful software meet." },
+  ],
+};
+
+export const interfaceCopy = { enchantTitle: "Enchant", enchantHelper: "Pick a tool to reveal its enchantments.", sampleNote: "Sample content", photoNote: "Photo not added yet" };
 
 export const biography = [
   "Hey! I’m Ky, a Data Science student at UC Berkeley with a growing obsession for building useful software.",
