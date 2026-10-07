@@ -26,42 +26,6 @@
   word-spacing: normal;
 }
 
-/* A classic title-screen panorama, softened like the Java menu's skybox. */
-.game-shell.home-shell::before {
-  z-index: -2;
-  inset: -12px;
-  background: url("./assets/menu-panorama.png") center / 100% 100% no-repeat;
-  backdrop-filter: none;
-  filter: blur(6px) saturate(0.72) hue-rotate(-13deg);
-  transform: scaleX(-1);
-}
-
-.home-shell::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(oklch(0 0 0 / 0.32), oklch(0 0 0 / 0.43));
-}
-
-.home-panorama {
-  position: absolute;
-  z-index: -2;
-  top: -12px;
-  left: -12px;
-  width: calc(100% + 24px);
-  height: calc(100% + 24px);
-  pointer-events: none;
-  opacity: 0;
-  filter: blur(6px) saturate(0.72) hue-rotate(-13deg);
-  transform: scaleX(-1);
-}
-
-.home-panorama[data-ready="true"] {
-  opacity: 1;
-}
-
 .home-shell .title-screen {
   min-height: max(100dvh, 580px);
   display: block;

@@ -2,6 +2,7 @@
 @source "../src";
 @import "tw-animate-css";
 @import "./homepage.css";
+@import "./panorama.css";
 
 @custom-variant dark (&:is(.dark *));
 

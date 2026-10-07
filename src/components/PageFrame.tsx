@@ -1,11 +1,10 @@
 import type { ReactNode } from "react";
-import panorama from "@/assets/classic-panorama.jpg";
 import { profile } from "@/data/portfolio";
 import { MinecraftButton } from "./MinecraftButton";
 import { PixelItem } from "./PixelItem";
 
 export function GameBackdrop({ children, dark = false, className = "" }: { children: ReactNode; dark?: boolean; className?: string }) {
-  return <main className={`game-shell ${dark ? "game-shell-dark" : ""} ${className}`} style={{ backgroundImage: `url(${panorama})` }}>{children}</main>;
+  return <main className={`game-shell ${dark ? "game-shell-dark" : ""} ${className}`}>{children}</main>;
 }
 
 export function PageFrame({ title, children, actions, variant = "list" }: { title: string; children: ReactNode; actions?: ReactNode; variant?: "list" | "enchant" | "profile" }) {

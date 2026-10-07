@@ -1,0 +1,65 @@
+/* One viewport-sized world behind every route, including the static fallback. */
+.portfolio-app {
+  position: relative;
+  isolation: isolate;
+  min-height: 100dvh;
+}
+
+.portfolio-backdrop {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  overflow: hidden;
+  isolation: isolate;
+  pointer-events: none;
+}
+
+.portfolio-backdrop::before {
+  content: "";
+  position: absolute;
+  z-index: -3;
+  inset: -12px;
+  background: url("./assets/menu-panorama.png") center / 100% 100% no-repeat;
+  filter: blur(6px) saturate(0.72) hue-rotate(-13deg);
+  transform: scaleX(-1);
+}
+
+.portfolio-backdrop::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(oklch(0 0 0 / 0.32), oklch(0 0 0 / 0.43));
+}
+
+.home-panorama {
+  position: absolute;
+  z-index: -2;
+  top: -12px;
+  left: -12px;
+  width: calc(100% + 24px);
+  height: calc(100% + 24px);
+  pointer-events: none;
+  opacity: 0;
+  filter: blur(6px) saturate(0.72) hue-rotate(-13deg);
+  transform: scaleX(-1);
+}
+
+.home-panorama[data-ready="true"] {
+  opacity: 1;
+}
+
+.portfolio-app .game-shell {
+  background: none;
+}
+
+.portfolio-app .game-shell::before {
+  background: none;
+  backdrop-filter: none;
+  pointer-events: none;
+}
+
+/* Retain the content pages' dimming for legibility over the same moving world. */
+.portfolio-app .game-shell-dark::before {
+  background: oklch(0 0 0 / 0.35);
+}
