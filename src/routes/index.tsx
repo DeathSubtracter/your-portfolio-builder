@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MinecraftButton } from "@/components/MinecraftButton";
 import { GameBackdrop, SocialDock } from "@/components/PageFrame";
 import { profile, splashPhrases } from "@/data/portfolio";
+import { ResumeButton } from "@/components/ResumeButton";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -35,7 +36,7 @@ function Index() {
           <MinecraftButton to="/about">About Me</MinecraftButton>
           <div className="secondary-menu">
             <MinecraftButton to="/skills">Skills</MinecraftButton>
-            <MinecraftButton onClick={() => alert("Resume coming soon — add your PDF in the portfolio content file.")}>Resume</MinecraftButton>
+            <ResumeButton />
           </div>
         </nav>
       </div>
