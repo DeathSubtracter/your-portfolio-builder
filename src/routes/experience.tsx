@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageFrame } from "@/components/PageFrame";
 import { experience } from "@/data/portfolio";
+import { MinecraftButton } from "@/components/MinecraftButton";
+import { PixelItem } from "@/components/PixelItem";
 
 export const Route = createFileRoute("/experience")({ head: () => ({ meta: [
   { title: "Experience — Ky Hoang" }, { name: "description", content: "Ky Hoang's education and software engineering experience." },
@@ -13,11 +15,11 @@ function ExperiencePage() {
   const [selected, setSelected] = useState(0);
   return <PageFrame title="Join Experience">
     <div className="server-list" role="listbox" aria-label="Experience">
-      {experience.map((item, index) => <button type="button" key={item.organization} role="option" aria-selected={selected === index} onClick={() => setSelected(index)} className="server-row">
-        <span className="server-icon">{item.organization.slice(0, 2).toUpperCase()}</span>
+      {experience.map((item, index) => <MinecraftButton key={item.organization} role="option" selected={selected === index} onClick={() => setSelected(index)} className="server-row">
+        <span className="server-icon"><PixelItem kind={index === 1 ? "book" : "pickaxe"} /></span>
         <span className="server-copy"><strong>{item.role}</strong><b>{item.organization}</b><span>{item.description}</span><small>{item.dates} · {item.location}</small></span>
-        <span className="ping"><b>▂▄▆</b>{item.ping}</span>
-      </button>)}
+        <span className="ping"><span className="signal-bars" aria-hidden="true"><i/><i/><i/><i/></span>{item.ping}</span>
+      </MinecraftButton>)}
     </div>
   </PageFrame>;
 }
