@@ -16,10 +16,10 @@ export const splashPhrases = [
 ];
 
 export const projects = [
-  { id: "campus-compass", title: "Campus Compass", date: "2026", description: "A student-built planner for finding the right courses, study spaces, and campus resources.", technologies: ["React", "TypeScript", "Python"], status: "Playable", icon: "🧭" },
-  { id: "bear-market", title: "Bear Market", date: "2026", description: "A data storytelling project that turns market trends into clear, interactive visual explanations.", technologies: ["Python", "Pandas", "React"], status: "Beta", icon: "📈" },
-  { id: "study-stack", title: "Study Stack", date: "2025", description: "A focused study tracker with sessions, goals, and lightweight progress insights.", technologies: ["Swift", "SQLite"], status: "Local", icon: "📚" },
-  { id: "cal-insights", title: "Cal Insights", date: "2025", description: "An exploratory dashboard for understanding public university datasets.", technologies: ["SQL", "Python", "D3"], status: "Archived", icon: "🐻" },
+  { id: "campus-compass", title: "Campus Compass", date: "2026", description: "A student-built planner for finding the right courses, study spaces, and campus resources.", technologies: ["React", "TypeScript", "Python"], status: "Playable", icon: "🧭", github: "", demo: "" },
+  { id: "bear-market", title: "Bear Market", date: "2026", description: "A data storytelling project that turns market trends into clear, interactive visual explanations.", technologies: ["Python", "Pandas", "React"], status: "Beta", icon: "📈", github: "", demo: "" },
+  { id: "study-stack", title: "Study Stack", date: "2025", description: "A focused study tracker with sessions, goals, and lightweight progress insights.", technologies: ["Swift", "SQLite"], status: "Local", icon: "📚", github: "", demo: "" },
+  { id: "cal-insights", title: "Cal Insights", date: "2025", description: "An exploratory dashboard for understanding public university datasets.", technologies: ["SQL", "Python", "D3"], status: "Archived", icon: "🐻", github: "", demo: "" },
 ];
 
 export const experience = [
