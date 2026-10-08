@@ -8,7 +8,8 @@
 }
 
 .home-shell {
-  --menu-unit: clamp(2px, 0.127vw, 2.6px);
+  /* Reference proportions: a 43vw menu, with height limiting on wide screens. */
+  --menu-unit: clamp(2px, min(0.215vw, 0.38dvh), 6px);
   --home-ink: oklch(0.12 0 0);
   --home-stone: oklch(0.57 0 0);
   --home-highlight: oklch(0.77 0 0);
@@ -16,7 +17,9 @@
   --home-hover: oklch(0.67 0.05 273);
   --home-logo-face: oklch(0.79 0.012 75);
   --home-logo-bevel: oklch(0.87 0.012 75);
-  --home-logo-side: oklch(0.37 0.01 75);
+  --home-logo-bottom: oklch(0.71 0.012 75);
+  --home-logo-side: oklch(0.43 0.01 75);
+  --home-logo-side-bottom: oklch(0.27 0.01 75);
   --home-logo-crack: oklch(0.48 0.014 75);
   --home-splash: oklch(0.97 0.21 109);
   overflow: hidden;
@@ -36,7 +39,7 @@
   position: absolute;
   top: clamp(28px, 3.8dvh, 48px);
   left: 50%;
-  width: min(calc(270 * var(--menu-unit)), calc(100% - 80px));
+  width: min(calc(280 * var(--menu-unit)), calc(100% - 80px));
   transform: translateX(-50%);
 }
 
@@ -55,40 +58,46 @@
 .home-title-back {
   fill: var(--home-logo-side);
   stroke: var(--home-ink);
-  stroke-width: 1;
-}
-
-.home-title-extrusion {
-  fill: var(--home-logo-side);
+  stroke-width: 0.65;
 }
 
 .home-title-outline {
   fill: var(--home-logo-face);
   stroke: var(--home-ink);
-  stroke-width: 0.85;
+  stroke-width: 0.55;
 }
 
 .home-title-face {
-  fill: var(--home-logo-face);
   stroke: var(--home-logo-bevel);
-  stroke-width: 0.18;
+  stroke-width: 0.1;
 }
 
-.home-title-cracks {
+.home-title-chisel {
+  fill: var(--home-logo-crack);
+  opacity: 0.4;
+}
+
+.home-title-cracks,
+.home-title-crack-light {
   fill: none;
   stroke: var(--home-logo-crack);
-  stroke-width: 0.23;
+  stroke-width: 0.14;
   stroke-linecap: square;
   stroke-linejoin: miter;
 }
 
+.home-title-crack-light {
+  stroke: var(--home-logo-bevel);
+  stroke-width: 0.2;
+}
+
 .home-shell .splash {
-  top: 52%;
-  left: 82%;
+  top: 46%;
+  left: 81%;
   right: auto;
   width: max-content;
   max-width: 60%;
-  font-size: calc(8 * var(--menu-unit));
+  font-size: calc(7 * var(--menu-unit));
   font-weight: 400;
   line-height: 1;
   white-space: nowrap;
@@ -107,7 +116,7 @@
 
 .home-shell .main-menu {
   position: absolute;
-  top: max(38.3dvh, 230px);
+  top: max(32dvh, calc(85 * var(--menu-unit)));
   left: 50%;
   transform: translateX(-50%);
   width: min(calc(200 * var(--menu-unit)), calc(100% - 32px));
@@ -126,11 +135,11 @@
   border: calc(0.8 * var(--menu-unit)) solid var(--home-ink);
   border-radius: 0;
   padding: 0 calc(4 * var(--menu-unit)) calc(0.8 * var(--menu-unit));
-  background: var(--home-stone) url("./assets/menu-stone.svg") center / calc(64 * var(--menu-unit))
+  background: var(--home-stone) url("./assets/menu-stone.svg") center / calc(32 * var(--menu-unit))
     auto repeat;
   color: oklch(0.98 0 0);
   font-family: inherit;
-  font-size: calc(10 * var(--menu-unit));
+  font-size: calc(9 * var(--menu-unit));
   font-weight: 400;
   line-height: 1;
   text-shadow: calc(1 * var(--menu-unit)) calc(1 * var(--menu-unit)) 0 oklch(0.29 0 0);
@@ -229,10 +238,10 @@
 
 @media (max-width: 900px) {
   .home-shell .wordmark-wrap {
-    width: min(540px, 84vw);
+    width: min(calc(280 * var(--menu-unit)), 84vw);
   }
   .home-shell .splash {
-    font-size: 18px;
+    font-size: calc(7 * var(--menu-unit));
   }
   .home-footer {
     font-size: 12px;
@@ -253,7 +262,7 @@
     font-size: clamp(11px, 3vw, 16px);
   }
   .home-shell .main-menu {
-    top: max(36dvh, 225px);
+    top: max(32dvh, 200px);
   }
   .home-footer {
     flex-wrap: wrap;
@@ -273,20 +282,20 @@
 
 @media (max-height: 600px) and (min-width: 541px) {
   .home-shell {
-    --menu-unit: 2px;
+    --menu-unit: clamp(1.8px, min(0.215vw, 0.36dvh), 2.2px);
   }
   .home-shell .title-screen {
     min-height: max(100dvh, 440px);
   }
   .home-shell .wordmark-wrap {
     top: 20px;
-    width: min(470px, 55vw);
+    width: min(calc(280 * var(--menu-unit)), 76vw);
   }
   .home-shell .main-menu {
-    top: max(35dvh, 165px);
+    top: max(32dvh, calc(85 * var(--menu-unit)));
   }
   .home-shell .splash {
-    font-size: 17px;
+    font-size: calc(7 * var(--menu-unit));
   }
   .home-footer {
     font-size: 11px;
