@@ -13,6 +13,8 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { MinecraftButton } from "@/components/MinecraftButton";
+import { HomePanorama } from "@/components/HomePanorama";
+import { MusicControl } from "@/components/MusicControl";
 
 function NotFoundComponent() {
   return (
@@ -24,9 +26,7 @@ function NotFoundComponent() {
           The page you're looking for doesn't exist or has been moved.
         </p>
         <div className="mt-6">
-          <MinecraftButton to="/">
-            Go home
-          </MinecraftButton>
+          <MinecraftButton to="/">Go home</MinecraftButton>
         </div>
       </div>
     </div>
@@ -58,9 +58,7 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
           >
             Try again
           </MinecraftButton>
-          <MinecraftButton to="/">
-            Go home
-          </MinecraftButton>
+          <MinecraftButton to="/">Go home</MinecraftButton>
         </div>
       </div>
     </div>
@@ -110,8 +108,14 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="portfolio-app">
+        <div className="portfolio-backdrop" aria-hidden="true">
+          <HomePanorama />
+        </div>
+        {/* Keep the panorama mounted while only the page content changes. */}
+        <Outlet />
+        <MusicControl />
+      </div>
     </QueryClientProvider>
   );
 }

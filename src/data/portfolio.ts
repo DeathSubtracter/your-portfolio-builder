@@ -7,6 +7,15 @@ export const profile = {
   resume: "",
 };
 
+export const music = {
+  title: "Sweden",
+  artist: "C418",
+  // The supplied MP3 is hosted with the site, without an external audio dependency.
+  src: "/audio/sweden-c418.mp3",
+  creditUrl: "https://c418.bandcamp.com/track/sweden",
+  defaultVolume: 0.25,
+};
+
 export const splashPhrases = [
   "Now with fewer segfaults!",
   "Data Structures Included!",

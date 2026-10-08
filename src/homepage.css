@@ -1,0 +1,309 @@
+/* Title-screen rules are scoped so the other portfolio routes keep their UI. */
+@font-face {
+  font-family: "Menu Pixel";
+  src: url("./assets/menu-pixel.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.home-shell {
+  /* Reference proportions: a 43vw menu, with height limiting on wide screens. */
+  --menu-unit: clamp(2px, min(0.215vw, 0.38dvh), 6px);
+  --home-ink: oklch(0.12 0 0);
+  --home-stone: oklch(0.57 0 0);
+  --home-highlight: oklch(0.77 0 0);
+  --home-lowlight: oklch(0.37 0 0);
+  --home-hover: oklch(0.67 0.05 273);
+  --home-logo-face: oklch(0.79 0.012 75);
+  --home-logo-bevel: oklch(0.87 0.012 75);
+  --home-logo-bottom: oklch(0.71 0.012 75);
+  --home-logo-side: oklch(0.43 0.01 75);
+  --home-logo-side-bottom: oklch(0.27 0.01 75);
+  --home-logo-crack: oklch(0.48 0.014 75);
+  --home-splash: oklch(0.97 0.21 109);
+  overflow: hidden;
+  isolation: isolate;
+  font-family: "Menu Pixel", "Minecraft", monospace;
+  font-weight: 400;
+  word-spacing: normal;
+}
+
+.home-shell .title-screen {
+  min-height: max(100dvh, 580px);
+  display: block;
+  padding: 0;
+}
+
+.home-shell .wordmark-wrap {
+  position: absolute;
+  top: clamp(28px, 3.8dvh, 48px);
+  left: 50%;
+  width: min(calc(280 * var(--menu-unit)), calc(100% - 80px));
+  transform: translateX(-50%);
+}
+
+.home-shell .portfolio-title {
+  width: 100%;
+  margin: 0;
+}
+
+.home-shell .portfolio-title svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.home-title-back {
+  fill: var(--home-logo-side);
+  stroke: var(--home-ink);
+  stroke-width: 0.65;
+}
+
+.home-title-outline {
+  fill: var(--home-logo-face);
+  stroke: var(--home-ink);
+  stroke-width: 0.55;
+}
+
+.home-title-face {
+  stroke: var(--home-logo-bevel);
+  stroke-width: 0.1;
+}
+
+.home-title-chisel {
+  fill: var(--home-logo-crack);
+  opacity: 0.4;
+}
+
+.home-title-cracks,
+.home-title-crack-light {
+  fill: none;
+  stroke: var(--home-logo-crack);
+  stroke-width: 0.14;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+.home-title-crack-light {
+  stroke: var(--home-logo-bevel);
+  stroke-width: 0.2;
+}
+
+.home-shell .splash {
+  top: 46%;
+  left: 81%;
+  right: auto;
+  width: max-content;
+  max-width: 60%;
+  font-size: calc(7 * var(--menu-unit));
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--home-splash);
+  text-shadow: calc(0.8 * var(--menu-unit)) calc(0.8 * var(--menu-unit)) 0 oklch(0.27 0.09 100);
+  transform-origin: center;
+  transform: translateX(-35%) rotate(-20deg);
+  animation: home-splash 1.1s ease-in-out infinite alternate;
+}
+
+@keyframes home-splash {
+  to {
+    transform: translateX(-35%) rotate(-20deg) scale(1.045);
+  }
+}
+
+.home-shell .main-menu {
+  position: absolute;
+  top: max(32dvh, calc(85 * var(--menu-unit)));
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(calc(200 * var(--menu-unit)), calc(100% - 32px));
+  margin: 0;
+  gap: calc(3.5 * var(--menu-unit));
+}
+
+.home-shell .secondary-menu {
+  gap: calc(4 * var(--menu-unit));
+  margin-top: calc(7 * var(--menu-unit));
+}
+
+.home-shell .mc-button {
+  height: calc(20 * var(--menu-unit));
+  min-height: 0;
+  border: calc(0.8 * var(--menu-unit)) solid var(--home-ink);
+  border-radius: 0;
+  padding: 0 calc(4 * var(--menu-unit)) calc(0.8 * var(--menu-unit));
+  background: var(--home-stone) url("./assets/menu-stone.svg") center / calc(32 * var(--menu-unit))
+    auto repeat;
+  color: oklch(0.98 0 0);
+  font-family: inherit;
+  font-size: calc(9 * var(--menu-unit));
+  font-weight: 400;
+  line-height: 1;
+  text-shadow: calc(1 * var(--menu-unit)) calc(1 * var(--menu-unit)) 0 oklch(0.29 0 0);
+  box-shadow:
+    inset calc(1 * var(--menu-unit)) calc(1 * var(--menu-unit)) 0 var(--home-highlight),
+    inset calc(-1 * var(--menu-unit)) calc(-2 * var(--menu-unit)) 0 var(--home-lowlight);
+}
+
+.home-shell .mc-button:hover:not(:disabled):not([aria-disabled="true"]),
+.home-shell .mc-button:focus-visible:not(:disabled):not([aria-disabled="true"]) {
+  background-color: var(--home-hover);
+  background-blend-mode: soft-light;
+  border-color: oklch(0.98 0 0);
+  color: var(--home-splash);
+  box-shadow:
+    inset calc(1 * var(--menu-unit)) calc(1 * var(--menu-unit)) 0 oklch(0.83 0.025 273),
+    inset calc(-1 * var(--menu-unit)) calc(-2 * var(--menu-unit)) 0 oklch(0.43 0.045 273);
+  outline: none;
+}
+
+.home-shell .mc-button:active:not(:disabled):not([aria-disabled="true"]) {
+  padding-top: calc(1 * var(--menu-unit));
+  padding-bottom: 0;
+  background-color: oklch(0.49 0.04 273);
+  box-shadow:
+    inset calc(1 * var(--menu-unit)) calc(2 * var(--menu-unit)) 0 oklch(0.3 0.02 273),
+    inset calc(-1 * var(--menu-unit)) calc(-1 * var(--menu-unit)) 0 oklch(0.69 0.025 273);
+}
+
+.home-shell .mc-button:disabled,
+.home-shell .mc-button[aria-disabled="true"] {
+  background: oklch(0.3 0 0);
+  border-color: var(--home-ink);
+  box-shadow:
+    inset calc(1 * var(--menu-unit)) calc(1 * var(--menu-unit)) 0 oklch(0.37 0 0),
+    inset calc(-1 * var(--menu-unit)) calc(-1 * var(--menu-unit)) 0 oklch(0.23 0 0);
+  color: oklch(0.61 0 0);
+  text-shadow: calc(0.8 * var(--menu-unit)) calc(0.8 * var(--menu-unit)) 0 oklch(0.17 0 0);
+}
+
+.home-shell .mc-tooltip {
+  font-size: calc(6 * var(--menu-unit));
+  word-spacing: normal;
+}
+
+.home-footer {
+  position: absolute;
+  z-index: 2;
+  inset: auto 12px 12px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: calc(7 * var(--menu-unit));
+  line-height: 1.2;
+  text-shadow: 2px 2px 0 var(--home-ink);
+}
+
+.home-footer-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.home-shell .social-dock {
+  position: static;
+  gap: calc(3 * var(--menu-unit));
+}
+
+.home-shell .social-dock a {
+  width: calc(17 * var(--menu-unit));
+  height: calc(17 * var(--menu-unit));
+  border: calc(0.8 * var(--menu-unit)) solid var(--home-ink);
+  background: var(--home-stone) url("./assets/menu-stone.svg") center / calc(64 * var(--menu-unit))
+    auto repeat;
+  box-shadow:
+    inset 2px 2px 0 var(--home-highlight),
+    inset -2px -2px 0 var(--home-lowlight);
+}
+
+.home-shell .social-dock [aria-disabled="true"] {
+  opacity: 0.65;
+}
+.home-shell .social-dock .pixel-item {
+  width: 65%;
+  height: 65%;
+}
+.home-shell .version {
+  position: static;
+  font-size: inherit;
+  white-space: nowrap;
+}
+.home-profile {
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .home-shell .wordmark-wrap {
+    width: min(calc(280 * var(--menu-unit)), 84vw);
+  }
+  .home-shell .splash {
+    font-size: calc(7 * var(--menu-unit));
+  }
+  .home-footer {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 540px) {
+  .home-shell {
+    --menu-unit: 2px;
+  }
+  .home-shell .wordmark-wrap {
+    top: 44px;
+    width: 86vw;
+  }
+  .home-shell .splash {
+    top: 80%;
+    left: 60%;
+    font-size: clamp(11px, 3vw, 16px);
+  }
+  .home-shell .main-menu {
+    top: max(32dvh, 200px);
+  }
+  .home-footer {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  .home-profile {
+    flex-basis: 100%;
+    text-align: center;
+    font-size: 11px;
+  }
+  .home-footer-controls {
+    align-items: center;
+  }
+}
+
+@media (max-height: 600px) and (min-width: 541px) {
+  .home-shell {
+    --menu-unit: clamp(1.8px, min(0.215vw, 0.36dvh), 2.2px);
+  }
+  .home-shell .title-screen {
+    min-height: max(100dvh, 440px);
+  }
+  .home-shell .wordmark-wrap {
+    top: 20px;
+    width: min(calc(280 * var(--menu-unit)), 76vw);
+  }
+  .home-shell .main-menu {
+    top: max(32dvh, calc(85 * var(--menu-unit)));
+  }
+  .home-shell .splash {
+    font-size: calc(7 * var(--menu-unit));
+  }
+  .home-footer {
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-shell .splash {
+    animation: none;
+  }
+}
