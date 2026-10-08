@@ -3,6 +3,7 @@
 @import "tw-animate-css";
 @import "./homepage.css";
 @import "./panorama.css";
+@import "./music-controls.css";
 
 @custom-variant dark (&:is(.dark *));
 

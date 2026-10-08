@@ -25,6 +25,7 @@ In GitHub, select your intended branch, open **src → data → portfolio.ts**, 
 | ------------------- | ----------------------------------------------------------------------------------- |
 | `profile`           | Name, homepage footer, GitHub and LinkedIn links, resume URL                        |
 | `splashPhrases`     | Yellow title-screen sayings; the homepage currently selects the second entry        |
+| `music`            | Track URL, title, artist credit, and starting volume                                  |
 | `projects`          | Project names, dates, descriptions, technologies, status, repository and demo links |
 | `experience`        | Roles, organizations, dates, locations, descriptions, decorative game “ping” text   |
 | `skillGroups`       | Skills grouped into the four existing categories                                    |
@@ -34,6 +35,14 @@ In GitHub, select your intended branch, open **src → data → portfolio.ts**, 
 Keep project `id` values unique. Keep the four skill categories unless you also intend to adjust their interface. The older `biography` array is not displayed; edit `about.paragraph` for the visible bio.
 
 For your resume, upload a PDF to `public/resume.pdf` and set `profile.resume` to `"/resume.pdf"`. Replace that PDF at the same path when you update it. Empty social/resume URLs keep the corresponding controls unavailable.
+
+## Music
+
+The `music` object in `src/data/portfolio.ts` selects the soundtrack. It currently streams C418’s **Minecraft** (the classic `calm1` track) from Minecraft’s resource CDN; no audio file is bundled in this repository. The credit links to the artist’s official track page. Availability depends on that external host and the browser supporting Ogg audio.
+
+To use a different track, update `music.src`, `music.title`, `music.artist`, and `music.creditUrl`. For an audio file you have permission to host, put it in `public/audio/` and set `music.src` to its path, such as `"/audio/menu-music.mp3"`. `defaultVolume` ranges from `0` to `1`; `0.25` means 25%.
+
+Visitors click the speaker or Play to start music because browsers block audible autoplay. Hovering or clicking the speaker opens a small volume panel. Playback, mute, and volume stay continuous while navigating between portfolio pages. A full browser reload requires another click to start playback.
 
 ## A few things still need a small code edit
 

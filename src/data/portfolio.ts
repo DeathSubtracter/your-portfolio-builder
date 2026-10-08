@@ -7,6 +7,16 @@ export const profile = {
   resume: "",
 };
 
+export const music = {
+  title: "Minecraft",
+  artist: "C418",
+  // Classic calm1 track streamed from Minecraft's resource CDN.
+  // Replace with a local /audio/... path or your own hosted track as needed.
+  src: "https://resources.download.minecraft.net/50/50a59a4f56e4046701b758ddbb1c1587efa4cadf",
+  creditUrl: "https://c418.bandcamp.com/track/minecraft",
+  defaultVolume: 0.25,
+};
+
 export const splashPhrases = [
   "Now with fewer segfaults!",
   "Data Structures Included!",

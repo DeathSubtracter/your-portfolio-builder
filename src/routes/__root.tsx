@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { MinecraftButton } from "@/components/MinecraftButton";
 import { HomePanorama } from "@/components/HomePanorama";
+import { MusicControl } from "@/components/MusicControl";
 
 function NotFoundComponent() {
   return (
@@ -113,6 +114,7 @@ function RootComponent() {
         </div>
         {/* Keep the panorama mounted while only the page content changes. */}
         <Outlet />
+        <MusicControl />
       </div>
     </QueryClientProvider>
   );
