@@ -1,5 +1,7 @@
 # Updating your portfolio
 
+For layout, CSS, assets, and local development, see [DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md).
+
 Most personal content lives in **`src/data/portfolio.ts`**. The pages read this file; changing its content keeps the existing Minecraft design.
 
 ## The easiest way: ask Lovable
@@ -25,20 +27,20 @@ In GitHub, select your intended branch, open **src → data → portfolio.ts**, 
 | ------------------- | ----------------------------------------------------------------------------------- |
 | `profile`           | Name, homepage footer, GitHub and LinkedIn links, resume URL                        |
 | `splashPhrases`     | Yellow title-screen sayings; the homepage currently selects the second entry        |
-| `music`            | Track URL, title, artist credit, and starting volume                                  |
+| `music`             | Track URL, title, artist credit, and starting volume                                |
 | `projects`          | Project names, dates, descriptions, technologies, status, repository and demo links |
 | `experience`        | Roles, organizations, dates, locations, descriptions, decorative game “ping” text   |
 | `skillGroups`       | Skills grouped into the four existing categories                                    |
 | `about`             | Visible biography, metadata, tags, and “Right now” entries                          |
 | `interfaceCopy`     | Shared sample-content and missing-photo labels                                      |
 
-Keep project `id` values unique. Keep the four skill categories unless you also intend to adjust their interface. The older `biography` array is not displayed; edit `about.paragraph` for the visible bio.
+Keep project `id` values unique. Keep the four skill categories unless you also intend to adjust their interface. Edit `about.paragraph` for the visible bio.
 
 For your resume, upload a PDF to `public/resume.pdf` and set `profile.resume` to `"/resume.pdf"`. Replace that PDF at the same path when you update it. Empty social/resume URLs keep the corresponding controls unavailable.
 
 ## Music
 
-The `music` object in `src/data/portfolio.ts` selects the soundtrack. It currently plays the supplied MP3 of C418’s **Sweden**, from *Minecraft – Volume Alpha*. The file lives in `public/audio/sweden-c418.mp3` and is served by the site itself, so playback does not depend on an external audio server. The credit links to the artist’s official track page.
+The `music` object in `src/data/portfolio.ts` selects the soundtrack. It currently plays the supplied MP3 of C418’s **Sweden**, from _Minecraft – Volume Alpha_. The file lives in `public/audio/sweden-c418.mp3` and is served by the site itself, so playback does not depend on an external audio server. The credit links to the artist’s official track page.
 
 To use a different track, update `music.src`, `music.title`, `music.artist`, and `music.creditUrl`. For an audio file you have permission to host, put it in `public/audio/` and set `music.src` to its path, such as `"/audio/menu-music.mp3"`. `defaultVolume` ranges from `0` to `1`; `0.25` means 25%.
 

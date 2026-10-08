@@ -1,30 +1,14 @@
-# Your Portfolio Builder
+# Ky Hoang Portfolio
 
-Hi Lovable,
+A Minecraft-style portfolio built with React, TypeScript, TanStack Start, and Vite. It has a persistent rotating panorama, Projects/Experience/About/Skills pages, and local music playback.
 
-I'd like you to help me plan out how to make a personal portfolio website like the one linked below:
-
-https://rayyanhai.dev
-
-It's essentially a mockup/imitation of Minecraft's starting page, where instead of buttons for loading saved files, or changing settings, the buttons are replaced with things like "Experience," "Projects", "About Me".
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/0cb04d87-bb2f-40e7-b678-668cd24613a3).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Start with [DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md) for manual editing and local development. [CONTENT_EDITING.md](./CONTENT_EDITING.md) explains how to replace portfolio content.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
 ```
+
+Checks: `npm run typecheck`, `npm run test`, `npm run lint`, and `npm run build`.
+
+This project remains connected to the [Lovable editor](https://lovable.dev/projects/0cb04d87-bb2f-40e7-b678-668cd24613a3). Work on the intended branch and review changes before merging into `main`.

@@ -1,0 +1,39 @@
+/* Shared Minecraft colors. Homepage logo/button colors are in homepage.css. */
+:root {
+  --stone: oklch(0.58 0 0);
+  --stone-light: oklch(0.84 0 0);
+  --stone-shadow: oklch(0.3 0 0);
+  --ui-shell: oklch(0.76 0 0);
+  --ui-recess: oklch(0.68 0 0);
+  --ui-ink: oklch(0.24 0 0);
+  --ui-highlight: oklch(0.96 0 0);
+  --ui-row: oklch(0.22 0.012 95);
+  --ui-slot: oklch(0.37 0.025 95);
+  --ui-slot-edge: oklch(0.47 0.025 95);
+  --ui-label: oklch(0.68 0.02 95);
+  --splash: oklch(0.94 0.19 106);
+  --rune: oklch(0.59 0.09 305);
+  --xp: oklch(0.77 0.22 135);
+  --item-outline: oklch(0.2 0.02 85);
+  --item-teal: oklch(0.69 0.12 180);
+  --item-highlight: oklch(0.89 0.1 168);
+  --item-paper: oklch(0.88 0.01 95);
+  --item-stone: oklch(0.56 0.01 95);
+  --item-wood: oklch(0.48 0.08 65);
+  --item-gold: oklch(0.77 0.14 88);
+  --item-red: oklch(0.6 0.18 27);
+  --item-leaf: oklch(0.48 0.12 140);
+  --item-sky: oklch(0.65 0.08 235);
+  --item-skin: oklch(0.73 0.08 65);
+  --shadow-pixel: 2px 2px 0 oklch(0.25 0 0);
+  --mc-disabled: oklch(0.3 0 0);
+  --mc-disabled-text: oklch(0.63 0 0);
+}
+
+/* Base page colors, including the error/not-found screens. */
+:root {
+  --background: oklch(0.12 0.02 255);
+  --foreground: oklch(0.96 0.01 100);
+  --muted-foreground: oklch(0.76 0.015 100);
+  --border: oklch(0.46 0.01 255);
+}

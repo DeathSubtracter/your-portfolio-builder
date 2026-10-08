@@ -1,0 +1,170 @@
+/* Shared button states, tooltips, social links, backdrop shell, and pixel icons. */
+.game-shell {
+  position: relative;
+  min-height: 100dvh;
+  background-size: cover;
+  background-position: center 60%;
+}
+.game-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: color-mix(in oklab, var(--background) 18%, transparent);
+  backdrop-filter: blur(1px);
+}
+.game-shell-dark::before {
+  background: color-mix(in oklab, var(--background) 67%, transparent);
+  backdrop-filter: blur(2px);
+}
+.mc-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 4px 12px;
+  border: 2px solid var(--background);
+  border-radius: 0;
+  background-color: var(--stone);
+  color: var(--ui-highlight);
+  font-size: 16px;
+  text-decoration: none;
+  text-shadow: var(--shadow-pixel);
+  box-shadow:
+    inset 2px 2px 0 color-mix(in oklab, var(--stone-light) 85%, transparent),
+    inset -2px -4px 0 color-mix(in oklab, var(--stone-shadow) 75%, transparent);
+  cursor: pointer;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 6px,
+      color-mix(in oklab, var(--stone-shadow) 10%, transparent) 6px 8px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 4px,
+      color-mix(in oklab, var(--stone-light) 8%, transparent) 4px 6px
+    );
+  image-rendering: pixelated;
+}
+.mc-button:hover:not(:disabled):not([aria-disabled="true"]),
+.mc-button:focus-visible {
+  border-color: var(--ui-highlight);
+  color: var(--splash);
+  outline: none;
+}
+.mc-button:active:not(:disabled) {
+  box-shadow: inset 2px 2px 0 color-mix(in oklab, var(--stone-shadow) 75%, transparent);
+}
+.mc-button:disabled,
+.mc-button[aria-disabled="true"] {
+  background-color: var(--mc-disabled);
+  background-image: none;
+  box-shadow: none;
+  color: var(--mc-disabled-text);
+  text-shadow: none;
+  cursor: default;
+  opacity: 1;
+}
+.resume-control {
+  position: relative;
+  display: flex;
+  min-width: 0;
+}
+.resume-control .mc-button {
+  width: 100%;
+}
+.mc-tooltip {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  bottom: calc(100% + 8px);
+  left: 0;
+  width: max-content;
+  max-width: 240px;
+  padding: 7px 9px;
+  background: var(--background);
+  border: 2px solid var(--rune);
+  color: var(--foreground);
+  text-shadow: none;
+  font-size: 13px;
+}
+.resume-control:hover .mc-tooltip,
+.skill-slot:hover .mc-tooltip,
+.skill-slot:focus .mc-tooltip {
+  display: block;
+}
+.social-dock {
+  position: absolute;
+  z-index: 3;
+  bottom: 12px;
+  left: 12px;
+  display: flex;
+  gap: 6px;
+}
+.social-dock a {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 2px solid;
+  border-color: var(--stone-light) var(--stone-shadow) var(--stone-shadow) var(--stone-light);
+  background: var(--stone);
+}
+.social-dock .pixel-item {
+  width: 20px;
+  height: 20px;
+}
+.social-dock [aria-disabled="true"] {
+  opacity: 0.65;
+}
+.item-outline {
+  fill: var(--item-outline);
+}
+.item-teal {
+  fill: var(--item-teal);
+}
+.item-highlight {
+  fill: var(--item-highlight);
+}
+.item-paper {
+  fill: var(--item-paper);
+}
+.item-stone {
+  fill: var(--item-stone);
+}
+.item-wood {
+  fill: var(--item-wood);
+}
+.item-gold {
+  fill: var(--item-gold);
+}
+.item-red {
+  fill: var(--item-red);
+}
+.item-leaf {
+  fill: var(--item-leaf);
+}
+.item-sky {
+  fill: var(--item-sky);
+}
+.item-skin {
+  fill: var(--item-skin);
+}
+@media (max-width: 640px) {
+  .game-shell {
+    background-position: 44% center;
+  }
+  .mc-button {
+    min-height: 44px;
+  }
+  .mc-tooltip {
+    max-width: 200px;
+  }
+}
+
+.pixel-item {
+  display: block;
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+}

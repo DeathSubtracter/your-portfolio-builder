@@ -27,7 +27,7 @@
   border: 2px solid #111;
   border-radius: 0;
   padding: 4px 8px 6px;
-  background: #7c7c7c url("./assets/menu-stone.svg") center / 128px repeat;
+  background: #7c7c7c url("../assets/menu-stone.svg") center / 128px repeat;
   box-shadow:
     inset 2px 2px 0 #b6b6b6,
     inset -2px -3px 0 #454545;
