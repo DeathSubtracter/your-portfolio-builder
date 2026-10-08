@@ -38,7 +38,7 @@ For your resume, upload a PDF to `public/resume.pdf` and set `profile.resume` to
 
 ## Music
 
-The `music` object in `src/data/portfolio.ts` selects the soundtrack. It currently streams C418’s **Minecraft** (the classic `calm1` track) from Minecraft’s resource CDN; no audio file is bundled in this repository. The credit links to the artist’s official track page. Availability depends on that external host and the browser supporting Ogg audio.
+The `music` object in `src/data/portfolio.ts` selects the soundtrack. It currently plays the supplied MP3 of C418’s **Sweden**, from *Minecraft – Volume Alpha*. The file lives in `public/audio/sweden-c418.mp3` and is served by the site itself, so playback does not depend on an external audio server. The credit links to the artist’s official track page.
 
 To use a different track, update `music.src`, `music.title`, `music.artist`, and `music.creditUrl`. For an audio file you have permission to host, put it in `public/audio/` and set `music.src` to its path, such as `"/audio/menu-music.mp3"`. `defaultVolume` ranges from `0` to `1`; `0.25` means 25%.
 

@@ -8,12 +8,11 @@ export const profile = {
 };
 
 export const music = {
-  title: "Minecraft",
+  title: "Sweden",
   artist: "C418",
-  // Classic calm1 track streamed from Minecraft's resource CDN.
-  // Replace with a local /audio/... path or your own hosted track as needed.
-  src: "https://resources.download.minecraft.net/50/50a59a4f56e4046701b758ddbb1c1587efa4cadf",
-  creditUrl: "https://c418.bandcamp.com/track/minecraft",
+  // The supplied MP3 is hosted with the site, without an external audio dependency.
+  src: "/audio/sweden-c418.mp3",
+  creditUrl: "https://c418.bandcamp.com/track/sweden",
   defaultVolume: 0.25,
 };
 
