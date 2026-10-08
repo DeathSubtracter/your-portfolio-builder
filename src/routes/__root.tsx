@@ -1,8 +1,6 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
-  Link,
-  createRootRouteWithContext,
+  createRootRoute,
   useRouter,
   HeadContent,
   Scripts,
@@ -65,7 +63,7 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   );
 }
 
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -104,18 +102,14 @@ function RootShell({ children }: { children: ReactNode }) {
 }
 
 function RootComponent() {
-  const { queryClient } = Route.useRouteContext();
-
   return (
-    <QueryClientProvider client={queryClient}>
-      <div className="portfolio-app">
-        <div className="portfolio-backdrop" aria-hidden="true">
-          <HomePanorama />
-        </div>
-        {/* Keep the panorama mounted while only the page content changes. */}
-        <Outlet />
-        <MusicControl />
+    <div className="portfolio-app">
+      <div className="portfolio-backdrop" aria-hidden="true">
+        <HomePanorama />
       </div>
-    </QueryClientProvider>
+      {/* Keep the panorama mounted while only the page content changes. */}
+      <Outlet />
+      <MusicControl />
+    </div>
   );
 }

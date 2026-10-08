@@ -6,6 +6,9 @@ import left from "@/assets/panorama/3.png";
 import top from "@/assets/panorama/4.png";
 import bottom from "@/assets/panorama/5.png";
 
+// Time for one full rotation. 450,000 milliseconds = 7.5 minutes.
+const ROTATION_DURATION_MS = 450_000;
+
 const vertexSource = `
   attribute vec2 position;
   varying vec2 view;
@@ -124,7 +127,9 @@ export function HomePanorama() {
       if (disposed || !loaded || motion.matches || document.hidden || gl.isContextLost()) return;
       if (lastTime !== undefined) {
         // A full revolution takes 7.5 minutes; resume without a camera jump.
-        yaw = (yaw + Math.min(time - lastTime, 100) * ((Math.PI * 2) / 450000)) % (Math.PI * 2);
+        yaw =
+          (yaw + Math.min(time - lastTime, 100) * ((Math.PI * 2) / ROTATION_DURATION_MS)) %
+          (Math.PI * 2);
       }
       lastTime = time;
       draw();

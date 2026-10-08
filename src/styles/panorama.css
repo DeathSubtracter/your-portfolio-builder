@@ -19,7 +19,7 @@
   position: absolute;
   z-index: -3;
   inset: -12px;
-  background: url("./assets/menu-panorama.png") center / 100% 100% no-repeat;
+  background: url("../assets/panorama/2.png") center / 100% 100% no-repeat;
   filter: blur(6px) saturate(0.72) hue-rotate(-13deg);
   transform: scaleX(-1);
 }

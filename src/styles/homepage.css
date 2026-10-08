@@ -1,7 +1,7 @@
 /* Title-screen rules are scoped so the other portfolio routes keep their UI. */
 @font-face {
   font-family: "Menu Pixel";
-  src: url("./assets/menu-pixel.otf") format("opentype");
+  src: url("../assets/menu-pixel.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -10,6 +10,15 @@
 .home-shell {
   /* Reference proportions: a 43vw menu, with height limiting on wide screens. */
   --menu-unit: clamp(2px, min(0.215vw, 0.38dvh), 6px);
+  /* Sizes below are in menu units; changing them keeps related controls aligned. */
+  --home-title-width: 280;
+  --home-menu-width: 200;
+  --home-button-height: 20;
+  --home-button-text-size: 9;
+  --home-menu-gap: 3.5;
+  --home-secondary-gap: 4;
+  --home-secondary-offset: 7;
+  --home-splash-duration: 1.1s;
   --home-ink: oklch(0.12 0 0);
   --home-stone: oklch(0.57 0 0);
   --home-highlight: oklch(0.77 0 0);
@@ -30,6 +39,8 @@
 }
 
 .home-shell .title-screen {
+  position: relative;
+  z-index: 1;
   min-height: max(100dvh, 580px);
   display: block;
   padding: 0;
@@ -37,9 +48,10 @@
 
 .home-shell .wordmark-wrap {
   position: absolute;
+  text-align: center;
   top: clamp(28px, 3.8dvh, 48px);
   left: 50%;
-  width: min(calc(280 * var(--menu-unit)), calc(100% - 80px));
+  width: min(calc(var(--home-title-width) * var(--menu-unit)), calc(100% - 80px));
   transform: translateX(-50%);
 }
 
@@ -92,6 +104,7 @@
 }
 
 .home-shell .splash {
+  position: absolute;
   top: 46%;
   left: 81%;
   right: auto;
@@ -105,7 +118,7 @@
   text-shadow: calc(0.8 * var(--menu-unit)) calc(0.8 * var(--menu-unit)) 0 oklch(0.27 0.09 100);
   transform-origin: center;
   transform: translateX(-35%) rotate(-20deg);
-  animation: home-splash 1.1s ease-in-out infinite alternate;
+  animation: home-splash var(--home-splash-duration) ease-in-out infinite alternate;
 }
 
 @keyframes home-splash {
@@ -115,31 +128,34 @@
 }
 
 .home-shell .main-menu {
+  display: grid;
   position: absolute;
   top: max(32dvh, calc(85 * var(--menu-unit)));
   left: 50%;
   transform: translateX(-50%);
-  width: min(calc(200 * var(--menu-unit)), calc(100% - 32px));
+  width: min(calc(var(--home-menu-width) * var(--menu-unit)), calc(100% - 32px));
   margin: 0;
-  gap: calc(3.5 * var(--menu-unit));
+  gap: calc(var(--home-menu-gap) * var(--menu-unit));
 }
 
 .home-shell .secondary-menu {
-  gap: calc(4 * var(--menu-unit));
-  margin-top: calc(7 * var(--menu-unit));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(var(--home-secondary-gap) * var(--menu-unit));
+  margin-top: calc(var(--home-secondary-offset) * var(--menu-unit));
 }
 
 .home-shell .mc-button {
-  height: calc(20 * var(--menu-unit));
+  height: calc(var(--home-button-height) * var(--menu-unit));
   min-height: 0;
   border: calc(0.8 * var(--menu-unit)) solid var(--home-ink);
   border-radius: 0;
   padding: 0 calc(4 * var(--menu-unit)) calc(0.8 * var(--menu-unit));
-  background: var(--home-stone) url("./assets/menu-stone.svg") center / calc(32 * var(--menu-unit))
+  background: var(--home-stone) url("../assets/menu-stone.svg") center / calc(32 * var(--menu-unit))
     auto repeat;
   color: oklch(0.98 0 0);
   font-family: inherit;
-  font-size: calc(9 * var(--menu-unit));
+  font-size: calc(var(--home-button-text-size) * var(--menu-unit));
   font-weight: 400;
   line-height: 1;
   text-shadow: calc(1 * var(--menu-unit)) calc(1 * var(--menu-unit)) 0 oklch(0.29 0 0);
@@ -213,7 +229,7 @@
   width: calc(17 * var(--menu-unit));
   height: calc(17 * var(--menu-unit));
   border: calc(0.8 * var(--menu-unit)) solid var(--home-ink);
-  background: var(--home-stone) url("./assets/menu-stone.svg") center / calc(64 * var(--menu-unit))
+  background: var(--home-stone) url("../assets/menu-stone.svg") center / calc(64 * var(--menu-unit))
     auto repeat;
   box-shadow:
     inset 2px 2px 0 var(--home-highlight),
@@ -228,6 +244,7 @@
   height: 65%;
 }
 .home-shell .version {
+  text-shadow: var(--shadow-pixel);
   position: static;
   font-size: inherit;
   white-space: nowrap;
@@ -238,7 +255,7 @@
 
 @media (max-width: 900px) {
   .home-shell .wordmark-wrap {
-    width: min(calc(280 * var(--menu-unit)), 84vw);
+    width: min(calc(var(--home-title-width) * var(--menu-unit)), 84vw);
   }
   .home-shell .splash {
     font-size: calc(7 * var(--menu-unit));
@@ -289,7 +306,7 @@
   }
   .home-shell .wordmark-wrap {
     top: 20px;
-    width: min(calc(280 * var(--menu-unit)), 76vw);
+    width: min(calc(var(--home-title-width) * var(--menu-unit)), 76vw);
   }
   .home-shell .main-menu {
     top: max(32dvh, calc(85 * var(--menu-unit)));

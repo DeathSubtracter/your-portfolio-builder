@@ -1,0 +1,56 @@
+/* Global fonts, page defaults, keyboard focus, and reduced-motion support. */
+@theme inline {
+  --font-sans: "Minecraft", monospace;
+  --font-display: "Minecraft", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+}
+
+@font-face {
+  font-family: "Minecraft";
+  src: url("/__l5e/assets-v1/50050e42-eb4a-4fe1-aecd-5b660eaaefdf/mc-regular.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: var(--border);
+  }
+  body {
+    margin: 0;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-display);
+    font-size: 16px;
+    letter-spacing: 0;
+    -webkit-font-smoothing: none;
+    font-synthesis: none;
+    word-spacing: 0.35em;
+  }
+  h1,
+  h2,
+  p {
+    margin: 0;
+  }
+  button,
+  a {
+    font: inherit;
+  }
+}
+button:focus-visible,
+a:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--splash);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
