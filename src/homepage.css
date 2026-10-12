@@ -48,11 +48,11 @@
   margin: 0;
 }
 
-.home-shell .portfolio-title svg {
+.home-shell .portfolio-title img {
   display: block;
   width: 100%;
   height: auto;
-  overflow: visible;
+  user-select: none;
 }
 
 .home-title-back {

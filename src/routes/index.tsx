@@ -3,7 +3,7 @@ import { MinecraftButton } from "@/components/MinecraftButton";
 import { GameBackdrop, SocialDock } from "@/components/PageFrame";
 import { profile, splashPhrases } from "@/data/portfolio";
 import { ResumeButton } from "@/components/ResumeButton";
-import { PortfolioTitle } from "@/components/PortfolioTitle";
+import titleAsset from "@/assets/minecraft-title.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,7 +33,15 @@ function Index() {
     <GameBackdrop className="home-shell">
       <div className="title-screen">
         <header className="wordmark-wrap">
-          <PortfolioTitle />
+          <h1 className="portfolio-title" aria-label={`${profile.name} Portfolio`}>
+            <img
+              src={titleAsset.url}
+              alt=""
+              width={1920}
+              height={455}
+              draggable={false}
+            />
+          </h1>
           <span className="splash">{splash}</span>
         </header>
 
