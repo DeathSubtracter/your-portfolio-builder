@@ -1,51 +1,33 @@
 # Updating your portfolio
 
-Most personal content lives in **`src/data/portfolio.ts`**. The pages read this file; changing its content keeps the existing Minecraft design.
+Editable copy, public contacts, project details, education, and page metadata live in **`src/data/portfolio.ts`**. Pages read this file while preserving the shared Minecraft design.
 
-## The easiest way: ask Lovable
+## Ask Lovable
 
-In the Lovable project, select the branch you want to edit and use a prompt like:
+Provide exact facts and ask to update the portfolio without changing its design or navigation. Only add working destinations you supply; never infer project repositories from a GitHub username.
 
-> Replace the mock projects with the real projects listed below. Update `src/data/portfolio.ts`, remove the “Sample project” labels for those projects, and keep the current page design, layout, and navigation. Do not invent information or change other pages.
->
-> Project name: …
-> Date: …
-> Description: …
-> Technologies: …
-> GitHub URL: …
-> Demo URL: …
+## Content sections
 
-The same approach works for your biography, education, experience, and skills. Give the exact facts you want displayed. Preview and check the result before publishing. Make sure Lovable is editing the intended branch; work on the draft review branch does not itself merge into `main`.
+| Section | Controls |
+| --- | --- |
+| `profile` | Identity, education, introduction, public contact links, resume destination |
+| `splashPhrases` | Decorative yellow title-screen sayings |
+| `music` | Soundtrack source, credit, and starting volume |
+| `projects` | Ordered projects, dates, categories, technologies, highlights, award, qualifications, and optional links |
+| `experience` | Work and teaching roles, organizations, dates where confirmed, locations, descriptions |
+| `skillGroups` | Supported languages, frameworks/libraries, developer tools/databases |
+| `about` | Biography paragraphs, metadata, education/work/recognition items |
+| `interfaceCopy` | Shared inventory headings and unavailable-resume message |
+| `pageCopy` | Unique titles and descriptions used in page and social metadata |
 
-## Editing the file yourself
+Keep project IDs unique. Missing project links are omitted. Keep Nestwatch's synthetic-data qualification visible in every forecasting description, and preserve the project-level award and collaborative coursework context. Leave CodeAdvantage's dates unspecified until confirmed. The pixel avatar is decorative, not a photograph.
 
-In GitHub, select your intended branch, open **src → data → portfolio.ts**, and click the pencil button to edit. Keep quotation marks, commas, and brackets intact, then commit the update to that branch. Review it in the connected preview before merging or publishing.
+## Resume
 
-| Section in the file | What it controls                                                                    |
-| ------------------- | ----------------------------------------------------------------------------------- |
-| `profile`           | Name, homepage footer, GitHub and LinkedIn links, resume URL                        |
-| `splashPhrases`     | Yellow title-screen sayings; the homepage currently selects the second entry        |
-| `music`            | Track URL, title, artist credit, and starting volume                                  |
-| `projects`          | Project names, dates, descriptions, technologies, status, repository and demo links |
-| `experience`        | Roles, organizations, dates, locations, descriptions, decorative game “ping” text   |
-| `skillGroups`       | Skills grouped into the four existing categories                                    |
-| `about`             | Visible biography, metadata, tags, and “Right now” entries                          |
-| `interfaceCopy`     | Shared sample-content and missing-photo labels                                      |
-
-Keep project `id` values unique. Keep the four skill categories unless you also intend to adjust their interface. The older `biography` array is not displayed; edit `about.paragraph` for the visible bio.
-
-For your resume, upload a PDF to `public/resume.pdf` and set `profile.resume` to `"/resume.pdf"`. Replace that PDF at the same path when you update it. Empty social/resume URLs keep the corresponding controls unavailable.
+The current **Ky Hoang Software Engineer Resume.pdf** is not yet available. Resume stays disabled until that exact current document is uploaded as a persistent website asset. Ask Lovable to store the uploaded PDF and update `profile.resume` to its persistent asset URL; do not use an old document or temporary attachment URL.
 
 ## Music
 
-The `music` object in `src/data/portfolio.ts` selects the soundtrack. It currently plays the supplied MP3 of C418’s **Sweden**, from *Minecraft – Volume Alpha*. The file lives in `public/audio/sweden-c418.mp3` and is served by the site itself, so playback does not depend on an external audio server. The credit links to the artist’s official track page.
+The existing soundtrack is C418's **Sweden**. Its source and official credit are selected by `music`. Playback and volume behavior remain unchanged. Hosted media should use the project's persistent asset flow when replaced.
 
-To use a different track, update `music.src`, `music.title`, `music.artist`, and `music.creditUrl`. For an audio file you have permission to host, put it in `public/audio/` and set `music.src` to its path, such as `"/audio/menu-music.mp3"`. `defaultVolume` ranges from `0` to `1`; `0.25` means 25%.
-
-Visitors click the speaker or Play to start music because browsers block audible autoplay. Hovering or clicking the speaker opens a small volume panel. Playback, mute, and volume stay continuous while navigating between portfolio pages. A full browser reload requires another click to start playback.
-
-## A few things still need a small code edit
-
-The Projects page has a hardcoded “Sample project” label, the About page has a hardcoded “UC BERKELEY” emblem, and page titles/descriptions include personal details in route metadata. When replacing the mock data or changing those facts, ask Lovable to update those specific labels too. Profile photos are currently represented by a placeholder pixel portrait.
-
-There is no private admin page or database editor yet. For occasional portfolio updates, editing this one data file (or asking Lovable to do it) is sufficient.
+Preview the intended branch before publishing. Content edits do not publish or merge automatically.

@@ -1,29 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MinecraftButton } from "@/components/MinecraftButton";
 import { GameBackdrop, SocialDock } from "@/components/PageFrame";
-import { profile, splashPhrases } from "@/data/portfolio";
+import { profile, splashPhrases, portfolioHead } from "@/data/portfolio";
 import { ResumeButton } from "@/components/ResumeButton";
 import titleAsset from "@/assets/minecraft-title.png.asset.json";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Ky Hoang — Software Engineering Portfolio" },
-      {
-        name: "description",
-        content:
-          "The Minecraft-inspired software engineering portfolio of UC Berkeley Data Science student Ky Hoang.",
-      },
-      { property: "og:title", content: "Ky Hoang — Software Engineering Portfolio" },
-      {
-        property: "og:description",
-        content:
-          "Explore Ky Hoang's projects, experience, skills, and story through a game-inspired portfolio.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => portfolioHead("home"),
   component: Index,
 });
 
@@ -54,6 +37,7 @@ function Index() {
             <ResumeButton />
           </div>
         </nav>
+        <p className="home-introduction">{profile.introduction}</p>
       </div>
       <footer className="home-footer">
         <div className="home-footer-controls">
@@ -63,7 +47,7 @@ function Index() {
         <p className="home-profile">
           {profile.subtitle}
           <br />
-          {profile.direction}
+          {profile.graduation}
         </p>
       </footer>
     </GameBackdrop>

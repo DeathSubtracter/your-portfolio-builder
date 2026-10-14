@@ -236,6 +236,19 @@
   text-align: right;
 }
 
+.home-shell .home-introduction {
+  position: absolute;
+  top: calc(max(32dvh, calc(85 * var(--menu-unit))) + 100 * var(--menu-unit) + 20px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(520px, calc(100% - 40px));
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--foreground);
+  text-shadow: var(--shadow-pixel);
+}
+
 @media (max-width: 900px) {
   .home-shell .wordmark-wrap {
     width: min(calc(280 * var(--menu-unit)), 84vw);
@@ -264,11 +277,17 @@
   .home-shell .main-menu {
     top: max(32dvh, 200px);
   }
+  .home-shell .title-screen { min-height: max(100dvh, 760px); }
+  .home-shell .home-introduction {
+    top: max(calc(32dvh + 285px), 485px);
+    font-size: 13px;
+  }
   .home-footer {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 12px;
+    padding-left: 40px;
   }
   .home-profile {
     flex-basis: 100%;
@@ -285,7 +304,7 @@
     --menu-unit: clamp(1.8px, min(0.215vw, 0.36dvh), 2.2px);
   }
   .home-shell .title-screen {
-    min-height: max(100dvh, 440px);
+    min-height: max(100dvh, 600px);
   }
   .home-shell .wordmark-wrap {
     top: 20px;
