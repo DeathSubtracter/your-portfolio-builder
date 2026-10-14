@@ -1,5 +1,8 @@
 # Roadmap
 
+- [ ] Replace fabricated portfolio content and update metadata/contact links
+- [ ] Verify factual safeguards, all routes, mobile layouts, and missing Resume behavior
+
 - [x] Match reference desktop scale and Minecraft bitmap typography
 - [x] Rebuild dimensional title lettering and authentic menu controls
 - [ ] Match Skills, About, world/server list framing and density
