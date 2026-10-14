@@ -238,7 +238,7 @@
 
 .home-shell .home-introduction {
   position: absolute;
-  top: max(calc(32dvh + 280px), calc(170 * var(--menu-unit)));
+  top: calc(max(32dvh, calc(85 * var(--menu-unit))) + 100 * var(--menu-unit) + 20px);
   left: 50%;
   transform: translateX(-50%);
   width: min(520px, calc(100% - 40px));
@@ -287,6 +287,7 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
+    padding-left: 40px;
   }
   .home-profile {
     flex-basis: 100%;
@@ -303,7 +304,7 @@
     --menu-unit: clamp(1.8px, min(0.215vw, 0.36dvh), 2.2px);
   }
   .home-shell .title-screen {
-    min-height: max(100dvh, 440px);
+    min-height: max(100dvh, 600px);
   }
   .home-shell .wordmark-wrap {
     top: 20px;
