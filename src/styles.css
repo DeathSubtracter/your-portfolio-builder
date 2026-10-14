@@ -237,3 +237,32 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible { outline: 2px sol
 .title-outline { fill: var(--background); }
 .title-extrusion { fill: var(--logo-shadow); }
 .title-face { fill: var(--logo); }
+
+/* Real portfolio entries keep the world/server framing without truncating facts. */
+.mc-button.world-row,.mc-button.server-row { grid-template-columns: 64px minmax(0,1fr); align-items: start; }
+.world-copy,.server-copy,.now-copy,.profile-metadata dd,.skill-slot > span { overflow-wrap: anywhere; }
+.world-copy > span,.server-copy > span { line-height: 1.5; }
+.world-copy small,.server-copy small { line-height: 1.5; }
+.project-detail { max-width: 704px; margin: 14px auto 18px; padding: 12px; border-top: 2px solid var(--stone-inset); font-size: 14px; line-height: 1.5; }
+.project-detail h2 { font-size: 18px; line-height: 1.4; margin-bottom: 8px; }
+.project-award { color: var(--splash); margin-bottom: 8px; }
+.project-qualification { color: var(--foreground); margin-bottom: 8px; }
+.project-detail ul { margin: 8px 0 0; padding-left: 20px; }
+.project-detail li + li { margin-top: 6px; }
+.bio-panel p + p { margin-top: 12px; }
+.right-now h2 { font-size: 21px; line-height: 1.3; }
+.profile-metadata > div { align-items: start; line-height: 1.4; }
+.profile-email { display: inline-block; margin-top: 14px; font-size: 13px; color: var(--foreground); overflow-wrap: anywhere; }
+.mc-button.enchant-option { grid-template-columns: 32px minmax(0,1fr); }
+.enchant-copy strong { line-height: 1.4; }
+.skill-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.skill-slot { line-height: 1.4; }
+@media (max-width: 640px) {
+ .mc-button.world-row,.mc-button.server-row { grid-template-columns: 48px minmax(0,1fr); }
+ .page-frame-list .menu-viewport { width: calc(100% + 20px); margin: 0 -10px; }
+ .project-detail { margin: 12px 8px 18px; font-size: 13px; }
+ .skill-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+ .profile-tags { grid-column: 1 / -1; }
+ .profile-actions { grid-column: 1 / -1; }
+ .now-copy strong { line-height: 1.4; }
+}

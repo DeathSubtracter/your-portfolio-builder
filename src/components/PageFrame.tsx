@@ -25,6 +25,7 @@ export function SocialDock() {
     <div className="social-dock" aria-label="Social links">
       <a href={profile.github || undefined} aria-disabled={!profile.github} title={profile.github ? "GitHub" : "GitHub link not added yet"} aria-label="GitHub" target="_blank" rel="noreferrer"><PixelItem kind="github" /></a>
       <a href={profile.linkedin || undefined} aria-disabled={!profile.linkedin} title={profile.linkedin ? "LinkedIn" : "LinkedIn link not added yet"} aria-label="LinkedIn" target="_blank" rel="noreferrer"><PixelItem kind="linkedin" /></a>
+      <a href={`mailto:${profile.email}`} title={`Email ${profile.name}`} aria-label={`Email ${profile.name}`}><PixelItem kind="email" /></a>
     </div>
   );
 }
